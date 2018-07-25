@@ -4,9 +4,18 @@ class ProductsListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.blue,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Center(
+          child: Text(
+            "PRODUCT LIST",
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+        ),
       ),
+      body: Container(),
     );
   }
 }
