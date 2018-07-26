@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:products_tutorial/widgets/products_list_item.dart';
 
 class ProductsListPage extends StatelessWidget {
   BuildContext context;
@@ -26,14 +27,13 @@ class ProductsListPage extends StatelessWidget {
     Size screenSize = MediaQuery.of(context).size;
 
     return Container(
-      width: screenSize.width,
-      height: screenSize.height,
       color: Colors.grey[200],
       child: Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           _buildFilterWidgets(screenSize),
-          _buildProductsList(),
+          _buildProductsList(screenSize),
         ],
       ),
     );
@@ -42,21 +42,25 @@ class ProductsListPage extends StatelessWidget {
   _buildFilterWidgets(Size screenSize) {
     return Container(
       margin: const EdgeInsets.all(12.0),
-      padding: const EdgeInsets.all(12.0),
       width: screenSize.width,
-      color: Colors.white,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          _buildFilterButton("SORT"),
-          Container(
-            color: Colors.black,
-            width: 2.0,
-            height: 24.0,
+      child: Card(
+        elevation: 4.0,
+        child: Container(
+          padding: const EdgeInsets.all(12.0),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              _buildFilterButton("SORT"),
+              Container(
+                color: Colors.black,
+                width: 2.0,
+                height: 24.0,
+              ),
+              _buildFilterButton("REFINE"),
+            ],
           ),
-          _buildFilterButton("REFINE"),
-        ],
+        ),
       ),
     );
   }
@@ -81,13 +85,49 @@ class ProductsListPage extends StatelessWidget {
     );
   }
 
-  _buildProductsList() {
-    return Container(
-      margin: const EdgeInsets.all(12.0),
-      color: Colors.white,
-      child: ListView.builder(
-        itemBuilder: (context, index) {},
+  _buildProductsList(Size screenSize) {
+    return Expanded(
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 12.0),
+        child: GridView.count(
+          childAspectRatio: 1 / 1.6,
+          crossAxisSpacing: 4.0,
+          mainAxisSpacing: 4.0,
+          crossAxisCount: 2,
+          children: _dummyProductsList(screenSize),
+        ),
       ),
     );
+  }
+
+  _dummyProductsList(Size screenSize) {
+    return [
+      ProductsListItem(
+        name: "Nakkana",
+        currentPrice: 122,
+        originalPrice: 424,
+        discount: 23,
+        screenSize: screenSize,
+      ),
+      ProductsListItem(
+        name: "Nakkana",
+        currentPrice: 122,
+        originalPrice: 424,
+        discount: 23,
+        screenSize: screenSize,
+      ),
+      ProductsListItem(
+        name: "Nakkana",
+        currentPrice: 122,
+        originalPrice: 424,
+        discount: 23,
+      ),
+      ProductsListItem(
+        name: "Nakkana",
+        currentPrice: 122,
+        originalPrice: 424,
+        discount: 23,
+      ),
+    ];
   }
 }
