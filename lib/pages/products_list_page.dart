@@ -25,16 +25,23 @@ class ProductsListPage extends StatelessWidget {
 
   _buildProductsListPage() {
     Size screenSize = MediaQuery.of(context).size;
-
     return Container(
-      color: Colors.grey[200],
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          _buildFilterWidgets(screenSize),
-          _buildProductsList(screenSize),
-        ],
+      color: Colors.grey[100],
+      child: ListView.builder(
+        itemCount: 4,
+        itemBuilder: (context, index) {
+          if (index == 0) {
+            return _buildFilterWidgets(screenSize);
+          } else {
+            return ProductsListItem(
+              name: "Nakkana",
+              currentPrice: 122,
+              originalPrice: 424,
+              discount: 23,
+              screenSize: screenSize,
+            );
+          }
+        },
       ),
     );
   }
@@ -86,15 +93,23 @@ class ProductsListPage extends StatelessWidget {
   }
 
   _buildProductsList(Size screenSize) {
-    return Expanded(
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 12.0),
-        child: GridView.count(
-          childAspectRatio: 1 / 1.6,
-          crossAxisSpacing: 4.0,
-          mainAxisSpacing: 4.0,
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 12.0),
+      child: SliverGrid(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          children: _dummyProductsList(screenSize),
+          mainAxisSpacing: 8.0,
+          crossAxisSpacing: 8.0,
+          childAspectRatio: 2 / 3,
+        ),
+        delegate: SliverChildBuilderDelegate(
+          (context, index) {
+            return Container(
+              alignment: Alignment.center,
+              color: Colors.purple[100 * (index % 9)],
+              child: Text("Grid Item: $index"),
+            );
+          },
         ),
       ),
     );

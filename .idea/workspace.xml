@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a89e82ee-7f10-43ab-b4f9-f076284e122f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/products_list_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/products_list_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/product_list_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/products_list_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/products_list_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/products_list_item.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,12 +18,10 @@
       <file leaf-file-name="products_list_page.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/pages/products_list_page.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="130" selection-start-line="130" selection-end-line="130" />
+            <state relative-caret-position="427">
+              <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#1196#1732#0" />
-                <element signature="e#1769#2093#0" />
               </folding>
             </state>
           </provider>
@@ -34,8 +30,8 @@
       <file leaf-file-name="products_list_item.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/widgets/products_list_item.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+            <state relative-caret-position="-2094">
+              <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -63,6 +59,8 @@
       <find>2000</find>
       <find>height</find>
       <find>screenSize</find>
+      <find>5.0</find>
+      <find>elevaatio</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,6 +126,9 @@
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -222,11 +223,11 @@
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29748285" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5675057" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" weight="0.18421052" />
+      <window_info anchor="bottom" id="Terminal" weight="0.075514875" />
       <window_info id="Captures" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20086083" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20086083" />
       <window_info anchor="right" id="Theme Preview" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" id="Flutter Inspector" />
@@ -268,22 +269,95 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/widgets/products_list_item.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+        <state relative-caret-position="-2094">
+          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/pages/products_list_page.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
+        <state relative-caret-position="427">
+          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#1196#1732#0" />
-            <element signature="e#1769#2093#0" />
           </folding>
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Android</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>products_tutorial</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Dart Packages</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
