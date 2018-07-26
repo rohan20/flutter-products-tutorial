@@ -13,9 +13,12 @@ class ProductDetailPage extends StatelessWidget {
         leading: IconButton(
           icon: Icon(
             Icons.chevron_left,
+            size: 40.0,
             color: Colors.black,
           ),
-          onPressed: null,
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
         ),
         backgroundColor: Colors.white,
         title: Text(
