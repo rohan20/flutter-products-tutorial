@@ -17,17 +17,17 @@
       <file leaf-file-name="product_detail_page.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/pages/product_detail_page.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+            <state relative-caret-position="634">
+              <caret line="157" column="6" selection-start-line="157" selection-start-column="6" selection-end-line="157" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products_list_page.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/pages/products_list_page.dart">
+      <file leaf-file-name="products_list_item.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/widgets/products_list_item.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="8" />
+            <state relative-caret-position="128">
+              <caret line="8" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -57,6 +57,8 @@
       <find>screenSize</find>
       <find>5.0</find>
       <find>elevaatio</find>
+      <find>networ</find>
+      <find>netwo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -222,9 +224,9 @@
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5675057" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.18421052" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.18421052" />
       <window_info id="Captures" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20086083" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20086083" />
       <window_info anchor="right" id="Theme Preview" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" id="Flutter Inspector" />
@@ -264,24 +266,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/widgets/products_list_item.dart">
+    <entry file="file://$PROJECT_DIR$/lib/pages/products_list_page.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2094">
-          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="247">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/products_list_page.dart">
+    <entry file="file://$PROJECT_DIR$/lib/widgets/products_list_item.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="8" />
+        <state relative-caret-position="128">
+          <caret line="8" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/pages/product_detail_page.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        <state relative-caret-position="634">
+          <caret line="157" column="6" selection-start-line="157" selection-start-column="6" selection-end-line="157" selection-end-column="6" />
         </state>
       </provider>
     </entry>
