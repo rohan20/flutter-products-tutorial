@@ -32,25 +32,30 @@ class ProductsListPage extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
+          _buildFilterWidgets(screenSize),
+          _buildProductsList(),
+        ],
+      ),
+    );
+  }
+
+  _buildFilterWidgets(Size screenSize) {
+    return Container(
+      margin: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(12.0),
+      width: screenSize.width,
+      color: Colors.white,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          _buildFilterButton("SORT"),
           Container(
-            margin: const EdgeInsets.all(12.0),
-            padding: const EdgeInsets.all(12.0),
-            width: screenSize.width,
-            color: Colors.white,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                _buildFilterButton("SORT"),
-                Container(
-                  color: Colors.black,
-                  width: 2.0,
-                  height: 24.0,
-                ),
-                _buildFilterButton("REFINE"),
-              ],
-            ),
+            color: Colors.black,
+            width: 2.0,
+            height: 24.0,
           ),
+          _buildFilterButton("REFINE"),
         ],
       ),
     );
@@ -72,6 +77,16 @@ class ProductsListPage extends StatelessWidget {
           ),
           Text(title),
         ],
+      ),
+    );
+  }
+
+  _buildProductsList() {
+    return Container(
+      margin: const EdgeInsets.all(12.0),
+      color: Colors.white,
+      child: ListView.builder(
+        itemBuilder: (context, index) {},
       ),
     );
   }
