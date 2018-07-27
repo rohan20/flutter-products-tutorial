@@ -26,7 +26,7 @@ class ProductDetailPage extends StatefulWidget {
 }
 
 class _ProductDetailPageState extends State<ProductDetailPage>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -216,10 +216,20 @@ class _ProductDetailPageState extends State<ProductDetailPage>
         controller: tabController,
         tabs: <Widget>[
           Tab(
-            child: Text("DETAILS"),
+            child: Text(
+              "DETAILS",
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
           ),
           Tab(
-            child: Text("MATERIAL & CARE"),
+            child: Text(
+              "MATERIAL & CARE",
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
           ),
         ],
       ),
