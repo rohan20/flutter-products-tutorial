@@ -63,25 +63,9 @@ class _ProductDetailPageState extends State<ProductDetailPage>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Center(
-                  child: Image.network(
-                    "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 16.0,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                child: Text(
-//          name,
-                  "Nakkana",
-                  style: TextStyle(fontSize: 16.0, color: Colors.black),
-                ),
-              ),
+              _buildProductImagesWidgets(),
+              SizedBox(height: 16.0),
+              _buildProductTitleWidget(),
               SizedBox(height: 12.0),
               _buildPriceWidgets(),
               SizedBox(height: 12.0),
@@ -106,9 +90,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
               _buildDivider(screenSize),
               SizedBox(height: 12.0),
               _buildMoreInfoData(),
-              SizedBox(
-                height: 48.0,
-              ),
+              SizedBox(height: 48.0),
             ],
           ),
         ),
@@ -125,6 +107,28 @@ class _ProductDetailPageState extends State<ProductDetailPage>
           height: 0.25,
         ),
       ],
+    );
+  }
+
+  _buildProductImagesWidgets() {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Center(
+        child: Image.network(
+          "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
+        ),
+      ),
+    );
+  }
+
+  _buildProductTitleWidget() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+      child: Text(
+        //name,
+        "Nakkana",
+        style: TextStyle(fontSize: 16.0, color: Colors.black),
+      ),
     );
   }
 
@@ -255,25 +259,25 @@ class _ProductDetailPageState extends State<ProductDetailPage>
               ),
             ],
           ),
-          Container(
-            child: TabBarView(
-              controller: tabController,
-              children: <Widget>[
-                Text(
-                  "76% acrylic, 19% polyster, 5% metallic yarn Hand-wash cold",
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
-                Text(
-                  "86% acrylic, 9% polyster, 1% metallic yarn Hand-wash cold",
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                )
-              ],
-            ),
-          ),
+//          Container(
+//            child: TabBarView(
+//              controller: tabController,
+//              children: <Widget>[
+//                Text(
+//                  "76% acrylic, 19% polyster, 5% metallic yarn Hand-wash cold",
+//                  style: TextStyle(
+//                    color: Colors.black,
+//                  ),
+//                ),
+//                Text(
+//                  "86% acrylic, 9% polyster, 1% metallic yarn Hand-wash cold",
+//                  style: TextStyle(
+//                    color: Colors.black,
+//                  ),
+//                )
+//              ],
+//            ),
+//          ),
         ],
       ),
     );

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a89e82ee-7f10-43ab-b4f9-f076284e122f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/product_detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/product_detail_page.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -17,8 +18,8 @@
       <file leaf-file-name="product_detail_page.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/pages/product_detail_page.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
+            <state relative-caret-position="542">
+              <caret line="134" column="3" selection-start-line="134" selection-start-column="3" selection-end-line="134" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -83,6 +84,7 @@
       <find>elevaatio</find>
       <find>networ</find>
       <find>netwo</find>
+      <find>visible</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -246,9 +248,9 @@
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3159091" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3159091" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.18409091" />
+      <window_info anchor="bottom" id="Terminal" weight="0.18409091" />
       <window_info id="Captures" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20028612" />
       <window_info anchor="right" id="Theme Preview" />
@@ -267,7 +269,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -321,8 +323,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/pages/product_detail_page.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
+        <state relative-caret-position="542">
+          <caret line="134" column="3" selection-start-line="134" selection-start-column="3" selection-end-line="134" selection-end-column="3" />
         </state>
       </provider>
     </entry>
