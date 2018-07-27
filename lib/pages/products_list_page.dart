@@ -28,10 +28,14 @@ class ProductsListPage extends StatelessWidget {
     return Container(
       color: Colors.grey[100],
       child: ListView.builder(
-        itemCount: 4,
+        itemCount: 5,
         itemBuilder: (context, index) {
           if (index == 0) {
             return _buildFilterWidgets(screenSize);
+          } else if (index == 4) {
+            return SizedBox(
+              height: 12.0,
+            );
           } else {
             return ProductsListItem(
               name: "Nakkana",
@@ -53,7 +57,7 @@ class ProductsListPage extends StatelessWidget {
       child: Card(
         elevation: 4.0,
         child: Container(
-          padding: const EdgeInsets.all(12.0),
+          padding: const EdgeInsets.symmetric(vertical: 12.0),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
