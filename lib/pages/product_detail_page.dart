@@ -119,10 +119,11 @@ class _ProductDetailPageState extends State<ProductDetailPage>
         height: 250.0,
         child: Center(
           child: DefaultTabController(
-            length: 2,
+            length: 3,
             child: Stack(
               children: <Widget>[
                 TabBarView(
+                  controller: imagesController,
                   children: <Widget>[
                     Image.network(
                       "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
