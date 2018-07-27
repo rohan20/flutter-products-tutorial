@@ -18,7 +18,7 @@
         <entry file="file://$PROJECT_DIR$/lib/pages/products_list_page.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-523">
-              <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+              <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -29,8 +29,8 @@
       <file leaf-file-name="product_detail_page.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/pages/product_detail_page.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="95" column="35" selection-start-line="95" selection-start-column="35" selection-end-line="95" selection-end-column="35" />
+            <state relative-caret-position="276">
+              <caret line="33" column="25" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -84,9 +84,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1441" />
+    <option name="x" value="1440" />
     <option name="y" value="-72" />
-    <option name="width" value="1440" />
+    <option name="width" value="1340" />
     <option name="height" value="977" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -136,7 +136,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunDashboard">
@@ -208,7 +208,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1441" y="-72" width="1440" height="977" extended-state="0" />
+    <frame x="1440" y="-72" width="1340" height="977" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
@@ -232,9 +232,9 @@
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.19090909" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.15681818" />
+      <window_info anchor="bottom" id="Terminal" weight="0.12045454" />
       <window_info id="Captures" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20028612" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21571648" />
       <window_info anchor="right" id="Theme Preview" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" id="Flutter Inspector" />
@@ -331,7 +331,7 @@
     <entry file="file://$PROJECT_DIR$/lib/pages/products_list_page.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-523">
-          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -340,8 +340,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/pages/product_detail_page.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="95" column="35" selection-start-line="95" selection-start-column="35" selection-end-line="95" selection-end-column="35" />
+        <state relative-caret-position="276">
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="25" />
         </state>
       </provider>
     </entry>

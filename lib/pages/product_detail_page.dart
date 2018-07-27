@@ -1,26 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ProductDetailPage extends StatefulWidget {
-  final String name;
-  final int currentPrice;
-  final int originalPrice;
-  final int discount;
-  final String details;
-  final String moreInfo;
-  final String styleNote;
-  final String materialAndCare;
-
-  ProductDetailPage({
-    this.name,
-    this.currentPrice,
-    this.originalPrice,
-    this.discount,
-    this.details,
-    this.moreInfo,
-    this.styleNote,
-    this.materialAndCare,
-  });
-
   @override
   _ProductDetailPageState createState() => _ProductDetailPageState();
 }
@@ -177,7 +157,6 @@ class _ProductDetailPageState extends State<ProductDetailPage>
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Text(
-//              "\$" + currentPrice.toString(),
             "\$899",
             style: TextStyle(fontSize: 16.0, color: Colors.black),
           ),
@@ -185,7 +164,6 @@ class _ProductDetailPageState extends State<ProductDetailPage>
             width: 8.0,
           ),
           Text(
-//              "\$" + originalPrice.toString(),
             "\$1299",
             style: TextStyle(
               fontSize: 12.0,
@@ -197,7 +175,6 @@ class _ProductDetailPageState extends State<ProductDetailPage>
             width: 8.0,
           ),
           Text(
-//              discount.toString() + "% Off",
             "30% Off",
             style: TextStyle(
               fontSize: 12.0,
