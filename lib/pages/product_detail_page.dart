@@ -259,25 +259,27 @@ class _ProductDetailPageState extends State<ProductDetailPage>
               ),
             ],
           ),
-//          Container(
-//            child: TabBarView(
-//              controller: tabController,
-//              children: <Widget>[
-//                Text(
-//                  "76% acrylic, 19% polyster, 5% metallic yarn Hand-wash cold",
-//                  style: TextStyle(
-//                    color: Colors.black,
-//                  ),
-//                ),
-//                Text(
-//                  "86% acrylic, 9% polyster, 1% metallic yarn Hand-wash cold",
-//                  style: TextStyle(
-//                    color: Colors.black,
-//                  ),
-//                )
-//              ],
-//            ),
-//          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 6.0),
+            height: 40.0,
+            child: TabBarView(
+              controller: tabController,
+              children: <Widget>[
+                Text(
+                  "76% acrylic, 19% polyster, 5% metallic yarn Hand-wash cold",
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+                Text(
+                  "86% acrylic, 9% polyster, 1% metallic yarn Hand-wash cold",
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
