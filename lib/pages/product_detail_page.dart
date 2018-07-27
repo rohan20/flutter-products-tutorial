@@ -64,7 +64,6 @@ class _ProductDetailPageState extends State<ProductDetailPage>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               _buildProductImagesWidgets(),
-              SizedBox(height: 16.0),
               _buildProductTitleWidget(),
               SizedBox(height: 12.0),
               _buildPriceWidgets(),
@@ -111,11 +110,41 @@ class _ProductDetailPageState extends State<ProductDetailPage>
   }
 
   _buildProductImagesWidgets() {
+    TabController imagesController = TabController(length: 3, vsync: this);
+
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: Center(
-        child: Image.network(
-          "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
+      child: Container(
+        height: 250.0,
+        child: Center(
+          child: DefaultTabController(
+            length: 2,
+            child: Stack(
+              children: <Widget>[
+                TabBarView(
+                  children: <Widget>[
+                    Image.network(
+                      "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
+                    ),
+                    Image.network(
+                      "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
+                    ),
+                    Image.network(
+                      "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
+                    ),
+                  ],
+                ),
+                Container(
+                  alignment: FractionalOffset(0.5, 0.95),
+                  child: TabPageSelector(
+                    controller: imagesController,
+                    selectedColor: Colors.grey,
+                    color: Colors.white,
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -124,10 +153,12 @@ class _ProductDetailPageState extends State<ProductDetailPage>
   _buildProductTitleWidget() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12.0),
-      child: Text(
-        //name,
-        "Nakkana",
-        style: TextStyle(fontSize: 16.0, color: Colors.black),
+      child: Center(
+        child: Text(
+          //name,
+          "Nakkana",
+          style: TextStyle(fontSize: 16.0, color: Colors.black),
+        ),
       ),
     );
   }
