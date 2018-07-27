@@ -1,26 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ProductDetailPage extends StatefulWidget {
-  final String name;
-  final int currentPrice;
-  final int originalPrice;
-  final int discount;
-  final String details;
-  final String moreInfo;
-  final String styleNote;
-  final String materialAndCare;
-
-  ProductDetailPage({
-    this.name,
-    this.currentPrice,
-    this.originalPrice,
-    this.discount,
-    this.details,
-    this.moreInfo,
-    this.styleNote,
-    this.materialAndCare,
-  });
-
   @override
   _ProductDetailPageState createState() => _ProductDetailPageState();
 }
@@ -61,37 +41,41 @@ class _ProductDetailPageState extends State<ProductDetailPage>
     return ListView(
       children: <Widget>[
         Container(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              _buildProductImagesWidgets(),
-              _buildProductTitleWidget(),
-              SizedBox(height: 12.0),
-              _buildPriceWidgets(),
-              SizedBox(height: 12.0),
-              _buildDivider(screenSize),
-              SizedBox(height: 12.0),
-              _buildFurtherInfoWidget(),
-              SizedBox(height: 12.0),
-              _buildDivider(screenSize),
-              SizedBox(height: 12.0),
-              _buildSizeChartWidgets(),
-              SizedBox(height: 12.0),
-              _buildDetailsAndMaterialWidgets(),
-              SizedBox(height: 12.0),
-              _buildStyleNoteHeader(),
-              SizedBox(height: 12.0),
-              _buildDivider(screenSize),
-              SizedBox(height: 12.0),
-              _buildStyleNoteData(),
-              SizedBox(height: 12.0),
-              _buildMoreInfoHeader(),
-              SizedBox(height: 12.0),
-              _buildDivider(screenSize),
-              SizedBox(height: 12.0),
-              _buildMoreInfoData(),
-              SizedBox(height: 48.0),
-            ],
+          padding: const EdgeInsets.all(4.0),
+          child: Card(
+            elevation: 4.0,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                _buildProductImagesWidgets(),
+                _buildProductTitleWidget(),
+                SizedBox(height: 12.0),
+                _buildPriceWidgets(),
+                SizedBox(height: 12.0),
+                _buildDivider(screenSize),
+                SizedBox(height: 12.0),
+                _buildFurtherInfoWidget(),
+                SizedBox(height: 12.0),
+                _buildDivider(screenSize),
+                SizedBox(height: 12.0),
+                _buildSizeChartWidgets(),
+                SizedBox(height: 12.0),
+                _buildDetailsAndMaterialWidgets(),
+                SizedBox(height: 12.0),
+                _buildStyleNoteHeader(),
+                SizedBox(height: 6.0),
+                _buildDivider(screenSize),
+                SizedBox(height: 4.0),
+                _buildStyleNoteData(),
+                SizedBox(height: 20.0),
+                _buildMoreInfoHeader(),
+                SizedBox(height: 6.0),
+                _buildDivider(screenSize),
+                SizedBox(height: 4.0),
+                _buildMoreInfoData(),
+                SizedBox(height: 24.0),
+              ],
+            ),
           ),
         ),
       ],
@@ -129,10 +113,10 @@ class _ProductDetailPageState extends State<ProductDetailPage>
                       "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
                     ),
                     Image.network(
-                      "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
+                      "https://n1.sdlcdn.com/imgs/c/9/8/Lambency-Brown-Solid-Casual-Blazers-SDL781227769-1-1b660.jpg",
                     ),
                     Image.network(
-                      "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
+                      "https://images-na.ssl-images-amazon.com/images/I/71O0zS0DT0L._UX342_.jpg",
                     ),
                   ],
                 ),
@@ -173,7 +157,6 @@ class _ProductDetailPageState extends State<ProductDetailPage>
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Text(
-//              "\$" + currentPrice.toString(),
             "\$899",
             style: TextStyle(fontSize: 16.0, color: Colors.black),
           ),
@@ -181,7 +164,6 @@ class _ProductDetailPageState extends State<ProductDetailPage>
             width: 8.0,
           ),
           Text(
-//              "\$" + originalPrice.toString(),
             "\$1299",
             style: TextStyle(
               fontSize: 12.0,
@@ -193,7 +175,6 @@ class _ProductDetailPageState extends State<ProductDetailPage>
             width: 8.0,
           ),
           Text(
-//              discount.toString() + "% Off",
             "30% Off",
             style: TextStyle(
               fontSize: 12.0,
@@ -378,7 +359,6 @@ class _ProductDetailPageState extends State<ProductDetailPage>
     return Container(
       width: MediaQuery.of(context).size.width,
       height: 50.0,
-      color: Colors.yellow,
       child: Row(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -386,7 +366,8 @@ class _ProductDetailPageState extends State<ProductDetailPage>
           Flexible(
             fit: FlexFit.tight,
             flex: 1,
-            child: Container(
+            child: RaisedButton(
+              onPressed: () {},
               color: Colors.grey,
               child: Center(
                 child: Row(
@@ -410,7 +391,8 @@ class _ProductDetailPageState extends State<ProductDetailPage>
           ),
           Flexible(
             flex: 2,
-            child: Container(
+            child: RaisedButton(
+              onPressed: () {},
               color: Colors.greenAccent,
               child: Center(
                 child: Row(
