@@ -61,11 +61,14 @@ class _ProductDetailPageState extends State<ProductDetailPage>
       children: <Widget>[
         Container(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Image.network(
-                  "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
+                child: Center(
+                  child: Image.network(
+                    "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
+                  ),
                 ),
               ),
               SizedBox(
@@ -91,6 +94,21 @@ class _ProductDetailPageState extends State<ProductDetailPage>
               _buildSizeChartWidgets(),
               SizedBox(height: 12.0),
               _buildDetailsAndMaterialWidgets(),
+              SizedBox(height: 12.0),
+              _buildStyleNoteHeader(),
+              SizedBox(height: 12.0),
+              _buildDivider(screenSize),
+              SizedBox(height: 12.0),
+              _buildStyleNoteData(),
+              SizedBox(height: 12.0),
+              _buildMoreInfoHeader(),
+              SizedBox(height: 12.0),
+              _buildDivider(screenSize),
+              SizedBox(height: 12.0),
+              _buildMoreInfoData(),
+              SizedBox(
+                height: 48.0,
+              ),
             ],
           ),
         ),
@@ -212,26 +230,107 @@ class _ProductDetailPageState extends State<ProductDetailPage>
   _buildDetailsAndMaterialWidgets() {
     TabController tabController = new TabController(length: 2, vsync: this);
     return Container(
-      child: TabBar(
-        controller: tabController,
-        tabs: <Widget>[
-          Tab(
-            child: Text(
-              "DETAILS",
-              style: TextStyle(
-                color: Colors.black,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          TabBar(
+            controller: tabController,
+            tabs: <Widget>[
+              Tab(
+                child: Text(
+                  "DETAILS",
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
               ),
-            ),
+              Tab(
+                child: Text(
+                  "MATERIAL & CARE",
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ],
           ),
-          Tab(
-            child: Text(
-              "MATERIAL & CARE",
-              style: TextStyle(
-                color: Colors.black,
-              ),
+          Container(
+            child: TabBarView(
+              controller: tabController,
+              children: <Widget>[
+                Text(
+                  "76% acrylic, 19% polyster, 5% metallic yarn Hand-wash cold",
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+                Text(
+                  "86% acrylic, 9% polyster, 1% metallic yarn Hand-wash cold",
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                )
+              ],
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  _buildStyleNoteHeader() {
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 12.0,
+      ),
+      child: Text(
+        "STYLE NOTE",
+        style: TextStyle(
+          color: Colors.grey[800],
+        ),
+      ),
+    );
+  }
+
+  _buildStyleNoteData() {
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 12.0,
+      ),
+      child: Text(
+        "Boys dress",
+        style: TextStyle(
+          color: Colors.grey[600],
+        ),
+      ),
+    );
+  }
+
+  _buildMoreInfoHeader() {
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 12.0,
+      ),
+      child: Text(
+        "MORE INFO",
+        style: TextStyle(
+          color: Colors.grey[800],
+        ),
+      ),
+    );
+  }
+
+  _buildMoreInfoData() {
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 12.0,
+      ),
+      child: Text(
+        "Product Code: 410\nTax info: Applicable GST will be charged at the time of chekout",
+        style: TextStyle(
+          color: Colors.grey[600],
+        ),
       ),
     );
   }

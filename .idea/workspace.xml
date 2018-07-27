@@ -17,8 +17,8 @@
       <file leaf-file-name="product_detail_page.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/pages/product_detail_page.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+            <state relative-caret-position="578">
+              <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -246,9 +246,9 @@
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3159091" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3159091" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" weight="0.18409091" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.18409091" />
       <window_info id="Captures" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20028612" />
       <window_info anchor="right" id="Theme Preview" />
@@ -321,8 +321,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/pages/product_detail_page.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        <state relative-caret-position="578">
+          <caret line="109" column="26" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="26" />
         </state>
       </provider>
     </entry>
