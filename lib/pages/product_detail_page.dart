@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ProductDetailPage extends StatelessWidget {
+class ProductDetailPage extends StatefulWidget {
   final String name;
   final int currentPrice;
   final int originalPrice;
@@ -10,18 +10,23 @@ class ProductDetailPage extends StatelessWidget {
   final String styleNote;
   final String materialAndCare;
 
-  const ProductDetailPage(
-      {Key key,
-      this.name,
-      this.currentPrice,
-      this.originalPrice,
-      this.discount,
-      this.details,
-      this.moreInfo,
-      this.styleNote,
-      this.materialAndCare})
-      : super(key: key);
+  ProductDetailPage({
+    this.name,
+    this.currentPrice,
+    this.originalPrice,
+    this.discount,
+    this.details,
+    this.moreInfo,
+    this.styleNote,
+    this.materialAndCare,
+  });
 
+  @override
+  _ProductDetailPageState createState() => _ProductDetailPageState();
+}
+
+class _ProductDetailPageState extends State<ProductDetailPage>
+    with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,15 +79,32 @@ class ProductDetailPage extends StatelessWidget {
                   style: TextStyle(fontSize: 16.0, color: Colors.black),
                 ),
               ),
-              SizedBox(
-                height: 12.0,
-              ),
+              SizedBox(height: 12.0),
               _buildPriceWidgets(),
+              SizedBox(height: 12.0),
               _buildDivider(screenSize),
+              SizedBox(height: 12.0),
               _buildFurtherInfoWidget(),
+              SizedBox(height: 12.0),
               _buildDivider(screenSize),
+              SizedBox(height: 12.0),
+              _buildSizeChartWidgets(),
+              SizedBox(height: 12.0),
+              _buildDetailsAndMaterialWidgets(),
             ],
           ),
+        ),
+      ],
+    );
+  }
+
+  _buildDivider(Size screenSize) {
+    return Column(
+      children: <Widget>[
+        Container(
+          color: Colors.grey[600],
+          width: screenSize.width,
+          height: 0.25,
         ),
       ],
     );
@@ -129,47 +151,78 @@ class ProductDetailPage extends StatelessWidget {
   }
 
   _buildFurtherInfoWidget() {
-    return Column(
-      children: <Widget>[
-        SizedBox(
-          height: 12.0,
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0),
-          child: Row(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+      child: Row(
+        children: <Widget>[
+          Icon(
+            Icons.local_offer,
+            color: Colors.grey[500],
+          ),
+          SizedBox(
+            width: 12.0,
+          ),
+          Text(
+            "Tap to get further info",
+            style: TextStyle(
+              color: Colors.grey[500],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  _buildSizeChartWidgets() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Row(
             children: <Widget>[
               Icon(
-                Icons.local_offer,
-                color: Colors.grey[500],
+                Icons.straighten,
+                color: Colors.grey[600],
               ),
               SizedBox(
                 width: 12.0,
               ),
               Text(
-                "Tap to get further info",
+                "Size",
                 style: TextStyle(
-                  color: Colors.grey[500],
+                  color: Colors.grey[600],
                 ),
               ),
             ],
           ),
-        ),
-      ],
+          Text(
+            "SIZE CHART",
+            style: TextStyle(
+              color: Colors.blue[400],
+              fontSize: 12.0,
+            ),
+          ),
+        ],
+      ),
     );
   }
 
-  _buildDivider(Size screenSize) {
-    return Column(
-      children: <Widget>[
-        SizedBox(
-          height: 12.0,
-        ),
-        Container(
-          color: Colors.grey[600],
-          width: screenSize.width,
-          height: 0.25,
-        ),
-      ],
+  _buildDetailsAndMaterialWidgets() {
+    TabController tabController = new TabController(length: 2, vsync: this);
+    return Container(
+      child: TabBar(
+        controller: tabController,
+        tabs: <Widget>[
+          Tab(
+            child: Text("DETAILS"),
+          ),
+          Tab(
+            child: Text("MATERIAL & CARE"),
+          ),
+        ],
+      ),
     );
   }
 }
