@@ -118,8 +118,8 @@ class ProductsListPage extends StatelessWidget {
       ),
       ProductsListItem(
         name: "Nakkana",
-        currentPrice: 122,
-        originalPrice: 424,
+        currentPrice: 899,
+        originalPrice: 1299,
         discount: 23,
         imageUrl:
             "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
@@ -134,8 +134,8 @@ class ProductsListPage extends StatelessWidget {
       ),
       ProductsListItem(
         name: "Nakkana",
-        currentPrice: 122,
-        originalPrice: 424,
+        currentPrice: 899,
+        originalPrice: 1299,
         discount: 23,
         imageUrl:
             "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
