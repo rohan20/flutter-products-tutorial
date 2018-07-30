@@ -1,21 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:products_tutorial/model/product.dart';
 import 'package:products_tutorial/util/constants.dart';
 import 'package:products_tutorial/util/routes.dart';
 
 class ProductsListItem extends StatelessWidget {
-  final String name;
-  final int currentPrice;
-  final int originalPrice;
-  final int discount;
-  final String imageUrl;
+  final Product product;
 
-  const ProductsListItem({Key key,
-    this.name,
-    this.currentPrice,
-    this.originalPrice,
-    this.discount,
-    this.imageUrl})
-      : super(key: key);
+  ProductsListItem({@required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -42,13 +33,10 @@ class ProductsListItem extends StatelessWidget {
           children: <Widget>[
             Container(
               child: Image.network(
-                imageUrl,
+                product.images[0].imageURL,
               ),
               height: 250.0,
-              width: MediaQuery
-                  .of(context)
-                  .size
-                  .width / 2.2,
+              width: MediaQuery.of(context).size.width / 2.2,
             ),
             SizedBox(
               height: 8.0,
@@ -62,7 +50,7 @@ class ProductsListItem extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Text(
-                    name,
+                    product.productName,
                     style: TextStyle(fontSize: 16.0, color: Colors.grey),
                   ),
                   SizedBox(
@@ -73,14 +61,14 @@ class ProductsListItem extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Text(
-                        "\$$currentPrice",
+                        "\$" + product.salePrice,
                         style: TextStyle(fontSize: 16.0, color: Colors.black),
                       ),
                       SizedBox(
                         width: 8.0,
                       ),
                       Text(
-                        "\$$originalPrice",
+                        "\$" + product.regularPrice,
                         style: TextStyle(
                           fontSize: 12.0,
                           color: Colors.grey,
@@ -91,7 +79,7 @@ class ProductsListItem extends StatelessWidget {
                         width: 8.0,
                       ),
                       Text(
-                        "$discount\% off",
+                        product.discount.toString() + "\% off",
                         style: TextStyle(fontSize: 12.0, color: Colors.grey),
                       ),
                     ],
