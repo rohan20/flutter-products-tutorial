@@ -37,7 +37,7 @@ class ProductsListPage extends StatelessWidget {
               height: 12.0,
             );
           } else {
-            return _dummyProductsList(screenSize)[index];
+            return _dummyProductsList()[index];
           }
         },
       ),
@@ -90,7 +90,7 @@ class ProductsListPage extends StatelessWidget {
     );
   }
 
-  _dummyProductsList(Size screenSize) {
+  _dummyProductsList() {
     return [
       ProductsListItem(
         name: "Michael Kora",
