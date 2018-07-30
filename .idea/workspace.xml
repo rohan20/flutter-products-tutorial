@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a89e82ee-7f10-43ab-b4f9-f076284e122f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/model/product.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/products_list_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/products_list_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util/remote_config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/remote_config.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,29 +16,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="remote_config.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/util/remote_config.dart">
+      <file leaf-file-name="products_list_page.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/pages/products_list_page.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="-52">
+              <caret line="104" column="10" selection-start-line="104" selection-start-column="10" selection-end-line="104" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="product.dart" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/model/product.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product_detail_page.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/pages/product_detail_page.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="38" column="50" lean-forward="true" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+            <state relative-caret-position="240">
+              <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -96,14 +91,15 @@
         <option value="$PROJECT_DIR$/lib/widgets/product_list_item.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
         <option value="$PROJECT_DIR$/lib/util/constants.dart" />
-        <option value="$PROJECT_DIR$/lib/pages/products_list_page.dart" />
         <option value="$PROJECT_DIR$/lib/widgets/products_list_item.dart" />
-        <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/lib/util/routes.dart" />
         <option value="$PROJECT_DIR$/lib/pages/product_detail_page.dart" />
         <option value="$PROJECT_DIR$/lib/util/config.dart" />
-        <option value="$PROJECT_DIR$/lib/util/remote_config.dart" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/lib/util/remote_config.dart" />
+        <option value="$PROJECT_DIR$/lib/pages/products_list_page.dart" />
+        <option value="$PROJECT_DIR$/lib/model/product.dart" />
       </list>
     </option>
   </component>
@@ -135,6 +131,18 @@
               <item name="products_tutorial" type="b2602c69:ProjectViewProjectNode" />
               <item name="products_tutorial" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="products_tutorial" type="b2602c69:ProjectViewProjectNode" />
+              <item name="products_tutorial" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="products_tutorial" type="b2602c69:ProjectViewProjectNode" />
+              <item name="products_tutorial" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="products_tutorial" type="b2602c69:ProjectViewProjectNode" />
@@ -245,15 +253,15 @@
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" weight="0.32954547" />
+      <window_info anchor="bottom" id="Messages" visible="true" weight="0.32954547" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.36477274" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.22045454" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.22045454" />
       <window_info id="Captures" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17473118" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17473118" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -337,13 +345,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Documents/flutter/packages/flutter/lib/src/material/list_tile.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="218" column="8" selection-start-line="218" selection-start-column="8" selection-end-line="218" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/flutter/packages/flutter/lib/src/material/ink_well.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -387,7 +388,7 @@
         <state relative-caret-position="560">
           <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -428,7 +429,7 @@
         <state relative-caret-position="427">
           <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -483,7 +484,7 @@
         <state relative-caret-position="372">
           <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -541,7 +542,7 @@
         <state relative-caret-position="432">
           <caret line="45" column="6" lean-forward="true" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -596,7 +597,7 @@
         <state relative-caret-position="560">
           <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -637,7 +638,7 @@
         <state relative-caret-position="427">
           <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -677,13 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -714,34 +708,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/products_list_page.dart">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="64">
+          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/pages/product_detail_page.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="38" column="50" lean-forward="true" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+        <state relative-caret-position="240">
+          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/util/remote_config.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/lib/pages/products_list_page.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="-52">
+          <caret line="104" column="10" selection-start-line="104" selection-start-column="10" selection-end-line="104" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/model/product.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
         </state>
       </provider>
     </entry>
