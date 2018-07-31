@@ -18,8 +18,6 @@ class _ProductDetailPageState extends State<ProductDetailPage>
 
   @override
   Widget build(BuildContext context) {
-    print("Product: ${product.toString()}");
-
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -106,7 +104,8 @@ class _ProductDetailPageState extends State<ProductDetailPage>
   }
 
   _buildProductImagesWidgets() {
-    TabController imagesController = TabController(length: 3, vsync: this);
+    TabController imagesController =
+        TabController(length: product.images.length, vsync: this);
 
     return Padding(
       padding: const EdgeInsets.all(16.0),
@@ -114,22 +113,18 @@ class _ProductDetailPageState extends State<ProductDetailPage>
         height: 250.0,
         child: Center(
           child: DefaultTabController(
-            length: 3,
+            length: product.images.length,
             child: Stack(
               children: <Widget>[
                 TabBarView(
                   controller: imagesController,
-                  children: <Widget>[
-                    Image.network(
-                      "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
-                    ),
-                    Image.network(
-                      "https://n1.sdlcdn.com/imgs/c/9/8/Lambency-Brown-Solid-Casual-Blazers-SDL781227769-1-1b660.jpg",
-                    ),
-                    Image.network(
-                      "https://images-na.ssl-images-amazon.com/images/I/71O0zS0DT0L._UX342_.jpg",
-                    ),
-                  ],
+                  children: product.images.map(
+                    (image) {
+                      return Image.network(
+                        image.imageURL,
+                      );
+                    },
+                  ).toList(),
                 ),
                 Container(
                   alignment: FractionalOffset(0.5, 0.95),

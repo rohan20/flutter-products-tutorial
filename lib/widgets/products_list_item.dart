@@ -28,11 +28,13 @@ class ProductsListItem extends StatelessWidget {
   _buildProductItemCard(BuildContext context, Product product) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) {
-            return ProductDetailPage(product: product);
-          },
-        ));
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) {
+              return ProductDetailPage(product: product);
+            },
+          ),
+        );
       },
       child: Card(
         elevation: 4.0,
