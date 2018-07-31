@@ -40,18 +40,22 @@ class ProductsListPage extends StatelessWidget {
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.active:
-              return Center(child: CircularProgressIndicator());
-            case ConnectionState.none:
-              return Center(child: Text("Unable to connect right now"));
+
             case ConnectionState.waiting:
               return Center(child: CircularProgressIndicator());
+
+            case ConnectionState.none:
+              return Center(child: Text("Unable to connect right now"));
+
             case ConnectionState.done:
               return ListView.builder(
-                itemCount: 7,
+                itemCount: 8,
                 itemBuilder: (context, index) {
                   if (index == 0) {
                     //0th index would contain filter icons
                     return _buildFilterWidgets(screenSize);
+                  } else if (index == 7) {
+                    return SizedBox(height: 12.0);
                   } else if (index % 2 == 0) {
                     //2nd, 4th, 6th.. index would contain nothing since this would
                     //be handled by the odd indexes where the row contains 2 items
@@ -121,7 +125,7 @@ class ProductsListPage extends StatelessWidget {
     var response = await http.get(
       RemoteConfig.config["BASE_URL"] +
           RemoteConfig.config["BASE_PRODUCTS_URL"] +
-          "&category=$categoryId&per_page=10&page=$pageIndex",
+          "&category=$categoryId&per_page=6&page=$pageIndex",
       headers: {
         "Authorization": RemoteConfig.config["AuthorizationToken"],
       },
