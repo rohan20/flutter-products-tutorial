@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:products_tutorial/model/product.dart';
 
 class ProductDetailPage extends StatefulWidget {
+  final Product product;
+
+  ProductDetailPage({this.product});
+
   @override
-  _ProductDetailPageState createState() => _ProductDetailPageState();
+  _ProductDetailPageState createState() => _ProductDetailPageState(product);
 }
 
 class _ProductDetailPageState extends State<ProductDetailPage>
     with TickerProviderStateMixin {
+  final Product product;
+
+  _ProductDetailPageState(this.product);
+
   @override
   Widget build(BuildContext context) {
+    print("Product: ${product.toString()}");
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

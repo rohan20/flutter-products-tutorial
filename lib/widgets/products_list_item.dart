@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:products_tutorial/model/product.dart';
+import 'package:products_tutorial/pages/product_detail_page.dart';
 import 'package:products_tutorial/util/constants.dart';
 import 'package:products_tutorial/util/routes.dart';
 
@@ -27,7 +28,11 @@ class ProductsListItem extends StatelessWidget {
   _buildProductItemCard(BuildContext context, Product product) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).pushNamed(Constants.ROUTE_PRODUCT_DETAIL);
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) {
+            return ProductDetailPage(product: product);
+          },
+        ));
       },
       child: Card(
         elevation: 4.0,
