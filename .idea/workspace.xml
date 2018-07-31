@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a89e82ee-7f10-43ab-b4f9-f076284e122f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/product_detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/product_detail_page.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,36 +17,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="product_detail_page.dart" pinned="false" current-in-tab="false">
+      <file leaf-file-name="product_detail_page.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/pages/product_detail_page.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
-              <caret line="362" lean-forward="true" selection-start-line="362" selection-end-line="362" />
+            <state relative-caret-position="272">
+              <caret line="17" lean-forward="true" selection-start-line="3" selection-end-line="17" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#4088#4357#0" />
-                <element signature="e#4382#5297#0" />
-                <element signature="e#5327#5793#0" />
-                <element signature="e#5822#6663#0" />
-                <element signature="e#6701#8228#0" />
-                <element signature="e#8256#8477#0" />
-                <element signature="e#8503#8724#0" />
-                <element signature="e#8561#8590#0" />
-                <element signature="e#8751#8971#0" />
-                <element signature="e#8996#9289#0" />
-                <element signature="e#9321#11111#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product.dart" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/model/product.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
+                <element signature="e#9446#11236#0" />
               </folding>
             </state>
           </provider>
@@ -276,6 +253,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-72" width="1433" height="972" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
@@ -746,33 +724,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/product_detail_page.dart">
+    <entry file="file://$PROJECT_DIR$/lib/model/product.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="362" lean-forward="true" selection-start-line="362" selection-end-line="362" />
+        <state relative-caret-position="367">
+          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#4088#4357#0" />
-            <element signature="e#4382#5297#0" />
-            <element signature="e#5327#5793#0" />
-            <element signature="e#5822#6663#0" />
-            <element signature="e#6701#8228#0" />
-            <element signature="e#8256#8477#0" />
-            <element signature="e#8503#8724#0" />
-            <element signature="e#8561#8590#0" />
-            <element signature="e#8751#8971#0" />
-            <element signature="e#8996#9289#0" />
-            <element signature="e#9321#11111#0" />
+            <element signature="e#0#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/model/product.dart">
+    <entry file="file://$PROJECT_DIR$/lib/pages/product_detail_page.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        <state relative-caret-position="272">
+          <caret line="17" lean-forward="true" selection-start-line="3" selection-end-line="17" />
           <folding>
-            <element signature="e#0#56#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#9446#11236#0" />
           </folding>
         </state>
       </provider>

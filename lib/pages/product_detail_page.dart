@@ -325,7 +325,9 @@ class _ProductDetailPageState extends State<ProductDetailPage>
         left: 12.0,
       ),
       child: Text(
-        product.shortDescription == null ? "Details unavailable" : product.shortDescription,
+        product.shortDescription == null
+            ? "Details unavailable"
+            : product.shortDescription,
         style: TextStyle(
           color: Colors.grey[600],
         ),
@@ -353,7 +355,8 @@ class _ProductDetailPageState extends State<ProductDetailPage>
         left: 12.0,
       ),
       child: Text(
-        "Product Code: ${product.productId}\nTax info: Applicable GST will be charged at the time of chekout",
+        "Product Code: ${product
+            .productId}\nTax info: Applicable GST will be charged at the time of chekout",
         style: TextStyle(
           color: Colors.grey[600],
         ),
