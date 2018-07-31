@@ -4,9 +4,13 @@ import 'package:products_tutorial/util/constants.dart';
 import 'package:products_tutorial/util/routes.dart';
 
 class ProductsListItem extends StatelessWidget {
-  final Product product;
+  final Product product1;
+  final Product product2;
 
-  ProductsListItem({@required this.product});
+  ProductsListItem({
+    @required this.product1,
+    @required this.product2,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +18,13 @@ class ProductsListItem extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        _buildProductItemCard(context),
-        _buildProductItemCard(context),
+        _buildProductItemCard(context, product1),
+        _buildProductItemCard(context, product2),
       ],
     );
   }
 
-  _buildProductItemCard(BuildContext context) {
+  _buildProductItemCard(BuildContext context, Product product) {
     return InkWell(
       onTap: () {
         Navigator.of(context).pushNamed(Constants.ROUTE_PRODUCT_DETAIL);
@@ -61,14 +65,14 @@ class ProductsListItem extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       Text(
-                        "\$" + product.salePrice,
+                        "\$${product.salePrice}",
                         style: TextStyle(fontSize: 16.0, color: Colors.black),
                       ),
                       SizedBox(
                         width: 8.0,
                       ),
                       Text(
-                        "\$" + product.regularPrice,
+                        "\$${product.regularPrice}",
                         style: TextStyle(
                           fontSize: 12.0,
                           color: Colors.grey,
@@ -79,7 +83,7 @@ class ProductsListItem extends StatelessWidget {
                         width: 8.0,
                       ),
                       Text(
-                        product.discount.toString() + "\% off",
+                        "${product.discount} % off",
                         style: TextStyle(fontSize: 12.0, color: Colors.grey),
                       ),
                     ],
