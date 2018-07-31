@@ -38,25 +38,34 @@ class ProductsListPage extends StatelessWidget {
       child: FutureBuilder<List<Product>>(
         future: _parseProductsFromResponse(95),
         builder: (context, snapshot) {
-          return ListView.builder(
-            itemCount: 7,
-            itemBuilder: (context, index) {
-              if (index == 0) {
-                //0th index would contain filter icons
-                return _buildFilterWidgets(screenSize);
-              } else if (index % 2 == 0) {
-                //2nd, 4th, 6th.. index would contain nothing since this would
-                //be handled by the odd indexes where the row contains 2 items
-                return Container();
-              } else {
-                //1st, 3rd, 5th.. index would contain a row containing 2 products
-                return ProductsListItem(
-                  product1: snapshot.data[index - 1],
-                  product2: snapshot.data[index],
-                );
-              }
-            },
-          );
+          switch (snapshot.connectionState) {
+            case ConnectionState.active:
+              return Center(child: CircularProgressIndicator());
+            case ConnectionState.none:
+              return Center(child: Text("Unable to connect right now"));
+            case ConnectionState.waiting:
+              return Center(child: CircularProgressIndicator());
+            case ConnectionState.done:
+              return ListView.builder(
+                itemCount: 7,
+                itemBuilder: (context, index) {
+                  if (index == 0) {
+                    //0th index would contain filter icons
+                    return _buildFilterWidgets(screenSize);
+                  } else if (index % 2 == 0) {
+                    //2nd, 4th, 6th.. index would contain nothing since this would
+                    //be handled by the odd indexes where the row contains 2 items
+                    return Container();
+                  } else {
+                    //1st, 3rd, 5th.. index would contain a row containing 2 products
+                    return ProductsListItem(
+                      product1: snapshot.data[index - 1],
+                      product2: snapshot.data[index],
+                    );
+                  }
+                },
+              );
+          }
         },
       ),
     );
@@ -112,7 +121,7 @@ class ProductsListPage extends StatelessWidget {
     var response = await http.get(
       RemoteConfig.config["BASE_URL"] +
           RemoteConfig.config["BASE_PRODUCTS_URL"] +
-          "&category=$categoryId&per_page=6&page=$pageIndex",
+          "&category=$categoryId&per_page=10&page=$pageIndex",
       headers: {
         "Authorization": RemoteConfig.config["AuthorizationToken"],
       },
