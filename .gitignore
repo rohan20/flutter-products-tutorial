@@ -7,3 +7,5 @@
 build/
 
 .flutter-plugins
+
+lib/util/remote_config.dart

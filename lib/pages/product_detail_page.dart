@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:products_tutorial/model/product.dart';
 
 class ProductDetailPage extends StatefulWidget {
+  final Product product;
+
+  ProductDetailPage({this.product});
+
   @override
-  _ProductDetailPageState createState() => _ProductDetailPageState();
+  _ProductDetailPageState createState() => _ProductDetailPageState(product);
 }
 
 class _ProductDetailPageState extends State<ProductDetailPage>
     with TickerProviderStateMixin {
+  final Product product;
+
+  _ProductDetailPageState(this.product);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,7 +104,8 @@ class _ProductDetailPageState extends State<ProductDetailPage>
   }
 
   _buildProductImagesWidgets() {
-    TabController imagesController = TabController(length: 3, vsync: this);
+    TabController imagesController =
+        TabController(length: product.images.length, vsync: this);
 
     return Padding(
       padding: const EdgeInsets.all(16.0),
@@ -103,22 +113,18 @@ class _ProductDetailPageState extends State<ProductDetailPage>
         height: 250.0,
         child: Center(
           child: DefaultTabController(
-            length: 3,
+            length: product.images.length,
             child: Stack(
               children: <Widget>[
                 TabBarView(
                   controller: imagesController,
-                  children: <Widget>[
-                    Image.network(
-                      "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
-                    ),
-                    Image.network(
-                      "https://n1.sdlcdn.com/imgs/c/9/8/Lambency-Brown-Solid-Casual-Blazers-SDL781227769-1-1b660.jpg",
-                    ),
-                    Image.network(
-                      "https://images-na.ssl-images-amazon.com/images/I/71O0zS0DT0L._UX342_.jpg",
-                    ),
-                  ],
+                  children: product.images.map(
+                    (image) {
+                      return Image.network(
+                        image.imageURL,
+                      );
+                    },
+                  ).toList(),
                 ),
                 Container(
                   alignment: FractionalOffset(0.5, 0.95),
@@ -142,7 +148,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
       child: Center(
         child: Text(
           //name,
-          "Nakkana",
+          product.productName,
           style: TextStyle(fontSize: 16.0, color: Colors.black),
         ),
       ),
@@ -157,14 +163,14 @@ class _ProductDetailPageState extends State<ProductDetailPage>
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Text(
-            "\$899",
+            "\$${product.salePrice}",
             style: TextStyle(fontSize: 16.0, color: Colors.black),
           ),
           SizedBox(
             width: 8.0,
           ),
           Text(
-            "\$1299",
+            "\$${product.regularPrice}",
             style: TextStyle(
               fontSize: 12.0,
               color: Colors.grey,
@@ -175,7 +181,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
             width: 8.0,
           ),
           Text(
-            "30% Off",
+            "${product.discount}% Off",
             style: TextStyle(
               fontSize: 12.0,
               color: Colors.blue[700],
@@ -319,7 +325,9 @@ class _ProductDetailPageState extends State<ProductDetailPage>
         left: 12.0,
       ),
       child: Text(
-        "Boys dress",
+        product.shortDescription == null
+            ? "Details unavailable"
+            : product.shortDescription,
         style: TextStyle(
           color: Colors.grey[600],
         ),
@@ -347,7 +355,8 @@ class _ProductDetailPageState extends State<ProductDetailPage>
         left: 12.0,
       ),
       child: Text(
-        "Product Code: 410\nTax info: Applicable GST will be charged at the time of chekout",
+        "Product Code: ${product
+            .productId}\nTax info: Applicable GST will be charged at the time of chekout",
         style: TextStyle(
           color: Colors.grey[600],
         ),

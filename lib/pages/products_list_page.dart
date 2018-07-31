@@ -1,4 +1,12 @@
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 import 'package:flutter/material.dart';
+import 'package:products_tutorial/model/any_image.dart';
+import 'package:products_tutorial/model/category.dart';
+import 'package:products_tutorial/model/product.dart';
+import 'package:products_tutorial/util/remote_config.dart';
 import 'package:products_tutorial/widgets/products_list_item.dart';
 
 class ProductsListPage extends StatelessWidget {
@@ -27,17 +35,40 @@ class ProductsListPage extends StatelessWidget {
     Size screenSize = MediaQuery.of(context).size;
     return Container(
       color: Colors.grey[100],
-      child: ListView.builder(
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          if (index == 0) {
-            return _buildFilterWidgets(screenSize);
-          } else if (index == 4) {
-            return SizedBox(
-              height: 12.0,
-            );
-          } else {
-            return _dummyProductsList()[index];
+      child: FutureBuilder<List<Product>>(
+        future: _parseProductsFromResponse(95),
+        builder: (context, snapshot) {
+          switch (snapshot.connectionState) {
+            case ConnectionState.active:
+
+            case ConnectionState.waiting:
+              return Center(child: CircularProgressIndicator());
+
+            case ConnectionState.none:
+              return Center(child: Text("Unable to connect right now"));
+
+            case ConnectionState.done:
+              return ListView.builder(
+                itemCount: 8,
+                itemBuilder: (context, index) {
+                  if (index == 0) {
+                    //0th index would contain filter icons
+                    return _buildFilterWidgets(screenSize);
+                  } else if (index == 7) {
+                    return SizedBox(height: 12.0);
+                  } else if (index % 2 == 0) {
+                    //2nd, 4th, 6th.. index would contain nothing since this would
+                    //be handled by the odd indexes where the row contains 2 items
+                    return Container();
+                  } else {
+                    //1st, 3rd, 5th.. index would contain a row containing 2 products
+                    return ProductsListItem(
+                      product1: snapshot.data[index - 1],
+                      product2: snapshot.data[index],
+                    );
+                  }
+                },
+              );
           }
         },
       ),
@@ -90,56 +121,86 @@ class ProductsListPage extends StatelessWidget {
     );
   }
 
-  _dummyProductsList() {
-    return [
-      ProductsListItem(
-        name: "Michael Kora",
-        currentPrice: 524,
-        originalPrice: 699,
-        discount: 25,
-        imageUrl:
-            "https://n1.sdlcdn.com/imgs/c/9/8/Lambency-Brown-Solid-Casual-Blazers-SDL781227769-1-1b660.jpg",
-      ),
-      ProductsListItem(
-        name: "Michael Kora",
-        currentPrice: 524,
-        originalPrice: 699,
-        discount: 25,
-        imageUrl:
-            "https://n1.sdlcdn.com/imgs/c/9/8/Lambency-Brown-Solid-Casual-Blazers-SDL781227769-1-1b660.jpg",
-      ),
-      ProductsListItem(
-        name: "David Klin",
-        currentPrice: 249,
-        originalPrice: 499,
-        discount: 50,
-        imageUrl:
-            "https://images-na.ssl-images-amazon.com/images/I/71O0zS0DT0L._UX342_.jpg",
-      ),
-      ProductsListItem(
-        name: "Nakkana",
-        currentPrice: 899,
-        originalPrice: 1299,
-        discount: 23,
-        imageUrl:
-            "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
-      ),
-      ProductsListItem(
-        name: "David Klin",
-        currentPrice: 249,
-        originalPrice: 499,
-        discount: 20,
-        imageUrl:
-            "https://images-na.ssl-images-amazon.com/images/I/71O0zS0DT0L._UX342_.jpg",
-      ),
-      ProductsListItem(
-        name: "Nakkana",
-        currentPrice: 899,
-        originalPrice: 1299,
-        discount: 23,
-        imageUrl:
-            "https://assets.myntassets.com/h_240,q_90,w_180/v1/assets/images/1304671/2016/4/14/11460624898615-Hancock-Men-Shirts-8481460624898035-1_mini.jpg",
-      ),
-    ];
+  Future<dynamic> _getProductsByCategory(categoryId, pageIndex) async {
+    var response = await http.get(
+      RemoteConfig.config["BASE_URL"] +
+          RemoteConfig.config["BASE_PRODUCTS_URL"] +
+          "&category=$categoryId&per_page=6&page=$pageIndex",
+      headers: {
+        "Authorization": RemoteConfig.config["AuthorizationToken"],
+      },
+    ).catchError(
+      (error) {
+        return false;
+      },
+    );
+
+    return json.decode(response.body);
+  }
+
+  Future<List<Product>> _parseProductsFromResponse(int categoryId) async {
+    List<Product> productsList = <Product>[];
+
+    var dataFromResponse = await _getProductsByCategory(categoryId, 1);
+
+    dataFromResponse.forEach(
+      (newProduct) {
+        //parse the product's images
+        List<AnyImage> imagesOfProductList = [];
+
+        newProduct["images"].forEach(
+          (newImage) {
+            imagesOfProductList.add(
+              new AnyImage(
+                imageURL: newImage["src"],
+                id: newImage["id"],
+                title: newImage["name"],
+                alt: newImage["alt"],
+              ),
+            );
+          },
+        );
+
+        //parse the product's categories
+        List<Category> categoriesOfProductList = [];
+
+        newProduct["categories"].forEach(
+          (newCategory) {
+            categoriesOfProductList.add(
+              new Category(
+                id: newCategory["id"],
+                name: newCategory["name"],
+              ),
+            );
+          },
+        );
+
+        //parse new product's details
+        Product product = new Product(
+          productId: newProduct["id"],
+          productName: newProduct["name"],
+          description: newProduct["description"],
+          regularPrice: newProduct["regular_price"],
+          salePrice: newProduct["sale_price"],
+          stockQuantity: newProduct["stock_quantity"] != null
+              ? newProduct["stock_quantity"]
+              : 0,
+          ifItemAvailable: newProduct["on_sale"] &&
+              newProduct["purchasable"] &&
+              newProduct["in_stock"],
+          discount: ((((int.parse(newProduct["regular_price"]) -
+                          int.parse(newProduct["sale_price"])) /
+                      (int.parse(newProduct["regular_price"]))) *
+                  100))
+              .round(),
+          images: imagesOfProductList,
+          categories: categoriesOfProductList,
+        );
+
+        productsList.add(product);
+      },
+    );
+
+    return productsList;
   }
 }
