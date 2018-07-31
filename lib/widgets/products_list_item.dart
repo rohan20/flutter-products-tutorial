@@ -83,7 +83,7 @@ class ProductsListItem extends StatelessWidget {
                         width: 8.0,
                       ),
                       Text(
-                        "${product.discount} % off",
+                        "${product.discount}% off",
                         style: TextStyle(fontSize: 12.0, color: Colors.grey),
                       ),
                     ],
