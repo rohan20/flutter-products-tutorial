@@ -45,9 +45,11 @@ class ProductsListPage extends StatelessWidget {
                 //0th index would contain filter icons
                 return _buildFilterWidgets(screenSize);
               } else if (index % 2 == 0) {
-                //1st, 3rd, 5th.. index would contain a row containing 2 products
+                //2nd, 4th, 6th.. index would contain nothing since this would
+                //be handled by the odd indexes where the row contains 2 items
                 return Container();
               } else {
+                //1st, 3rd, 5th.. index would contain a row containing 2 products
                 return ProductsListItem(
                   product1: snapshot.data[index - 1],
                   product2: snapshot.data[index],
