@@ -148,7 +148,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
       child: Center(
         child: Text(
           //name,
-          "Nakkana",
+          product.productName,
           style: TextStyle(fontSize: 16.0, color: Colors.black),
         ),
       ),
@@ -163,14 +163,14 @@ class _ProductDetailPageState extends State<ProductDetailPage>
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Text(
-            "\$899",
+            "\$${product.salePrice}",
             style: TextStyle(fontSize: 16.0, color: Colors.black),
           ),
           SizedBox(
             width: 8.0,
           ),
           Text(
-            "\$1299",
+            "\$${product.regularPrice}",
             style: TextStyle(
               fontSize: 12.0,
               color: Colors.grey,
@@ -181,7 +181,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
             width: 8.0,
           ),
           Text(
-            "30% Off",
+            "${product.discount}% Off",
             style: TextStyle(
               fontSize: 12.0,
               color: Colors.blue[700],
