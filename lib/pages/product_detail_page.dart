@@ -281,7 +281,7 @@ class _ProductDetailPageState extends State<ProductDetailPage>
           ),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 6.0),
-            height: 40.0,
+            height: 60.0,
             child: TabBarView(
               controller: tabController,
               children: <Widget>[
