@@ -4,19 +4,14 @@ import 'package:products_tutorial/widgets/products_list_item.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class ProductsListPage extends StatelessWidget {
-  BuildContext context;
-  ProductScopedModel productModel;
-
   @override
   Widget build(BuildContext context) {
-    this.context = context;
+    ProductScopedModel productModel = ProductScopedModel();
+    productModel.parseProductsFromResponse(95);
 
-    return ScopedModelDescendant<ProductScopedModel>(
-        builder: (context, child, model) {
-      this.productModel = model;
-      model.parseProductsFromResponse(95);
-
-      return Scaffold(
+    return new ScopedModel<ProductScopedModel>(
+      model: productModel,
+      child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.white,
@@ -27,40 +22,69 @@ class ProductsListPage extends StatelessWidget {
             ),
           ),
         ),
-        body: _buildProductsListPage(),
-      );
-    });
+        body: ProductsListPageBody(),
+      ),
+    );
+  }
+}
+
+class ProductsListPageBody extends StatelessWidget {
+  BuildContext context;
+  ProductScopedModel model;
+
+  @override
+  Widget build(BuildContext context) {
+    this.context = context;
+
+    return ScopedModelDescendant<ProductScopedModel>(
+      builder: (context, child, model) {
+        this.model = model;
+        return model.isLoading
+            ? _buildCircularProgressIndicator()
+            : _buildListView();
+      },
+    );
   }
 
-  _buildProductsListPage() {
-    debugPrint("Notify listeners called");
+  _buildCircularProgressIndicator() {
+    return Center(
+      child: CircularProgressIndicator(),
+    );
+  }
 
+  _buildListView() {
     Size screenSize = MediaQuery.of(context).size;
-    return (productModel.getProductsCount() == 0
-        ? Center(
-            child: CircularProgressIndicator(),
-          )
-        : ListView.builder(
-            itemCount: 6,
-            itemBuilder: (context, index) {
-              if (index == 0) {
-                //0th index would contain filter icons
-                return _buildFilterWidgets(screenSize);
-              } else if (index == productModel.getProductsCount() + 1) {
-                return SizedBox(height: 12.0);
-              } else if (index % 2 == 0) {
-                //2nd, 4th, 6th.. index would contain nothing since this would
-                //be handled by the odd indexes where the row contains 2 items
-                return Container();
-              } else {
-                //1st, 3rd, 5th.. index would contain a row containing 2 products
-                return ProductsListItem(
-                  product1: productModel.getAllProducts()[index - 1],
-                  product2: productModel.getAllProducts()[index],
-                );
-              }
-            },
-          ));
+
+    debugPrint(model.getProductsCount().toString());
+
+    return ScopedModelDescendant<ProductScopedModel>(
+      builder: (context, child, model) {
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 8.0),
+          child: model.getProductsCount() == 0
+              ? Center(child: Text("No products available."))
+              : ListView.builder(
+                  itemCount: model.getProductsCount(),
+                  itemBuilder: (context, index) {
+                    if (index == 0) {
+                      //0th index would contain filter icons
+                      return _buildFilterWidgets(screenSize);
+                    } else if (index % 2 == 0) {
+                      //2nd, 4th, 6th.. index would contain nothing since this would
+                      //be handled by the odd indexes where the row contains 2 items
+                      return Container();
+                    } else {
+                      //1st, 3rd, 5th.. index would contain a row containing 2 products
+                      return ProductsListItem(
+                        product1: model.productsList[index - 1],
+                        product2: model.productsList[index],
+                      );
+                    }
+                  },
+                ),
+        );
+      },
+    );
   }
 
   _buildFilterWidgets(Size screenSize) {
