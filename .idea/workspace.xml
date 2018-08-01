@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a89e82ee-7f10-43ab-b4f9-f076284e122f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/pages/product_detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/product_detail_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/products_list_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/products_list_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/scoped_model/product_scoped_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/scoped_model/product_scoped_model.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,26 +40,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product_detail_page.dart" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/pages/product_detail_page.dart">
+      <file leaf-file-name="products_list_page.dart" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/pages/products_list_page.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="283" column="21" selection-start-line="283" selection-start-column="21" selection-end-line="283" selection-end-column="21" />
+            <state relative-caret-position="397">
+              <caret line="71" column="37" lean-forward="true" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#331#846#0" />
+                <element signature="e#1278#1351#0" />
+                <element signature="e#2566#3236#0" />
+                <element signature="e#3775#4099#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products_list_page.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/pages/products_list_page.dart">
+      <file leaf-file-name="product_scoped_model.dart" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/scoped_model/product_scoped_model.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+            <state relative-caret-position="1336">
+              <caret line="122" column="25" selection-start-line="122" selection-start-column="25" selection-end-line="122" selection-end-column="25" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#2566#3236#0" />
+                <element signature="e#0#20#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -86,7 +91,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ye</find>
       <find>SPRT</find>
       <find>SORT</find>
       <find>Image.net</find>
@@ -116,6 +120,7 @@
       <find>print</find>
       <find>details</find>
       <find>DETAILS</find>
+      <find>screenSize</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,16 +147,16 @@
         <option value="$PROJECT_DIR$/lib/scoped_model/bag_scoped_model.dart" />
         <option value="$PROJECT_DIR$/lib/widgets/products_list_item.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
-        <option value="$PROJECT_DIR$/lib/scoped_model/product_scoped_model.dart" />
-        <option value="$PROJECT_DIR$/lib/pages/products_list_page.dart" />
         <option value="$PROJECT_DIR$/lib/pages/product_detail_page.dart" />
+        <option value="$PROJECT_DIR$/lib/pages/products_list_page.dart" />
+        <option value="$PROJECT_DIR$/lib/scoped_model/product_scoped_model.dart" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1440" />
     <option name="y" value="-72" />
-    <option name="width" value="1414" />
+    <option name="width" value="1920" />
     <option name="height" value="972" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -213,7 +218,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -299,7 +304,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="-72" width="1414" height="972" extended-state="0" />
+    <frame x="1440" y="-72" width="1920" height="972" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -322,11 +327,11 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49965158" weight="0.34285715" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49965158" weight="0.41828573" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32914287" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.17028572" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.17028572" />
       <window_info id="Captures" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4986226" visible="true" weight="0.22011662" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4986226" visible="true" weight="0.16080937" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -413,7 +418,7 @@
           <properties />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="21" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -427,7 +432,10 @@
           <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#331#846#0" />
+            <element signature="e#1278#1351#0" />
             <element signature="e#2566#3236#0" />
+            <element signature="e#3775#4099#0" />
           </folding>
         </state>
       </provider>
@@ -483,7 +491,10 @@
           <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#331#846#0" />
+            <element signature="e#1278#1351#0" />
             <element signature="e#2566#3236#0" />
+            <element signature="e#3775#4099#0" />
           </folding>
         </state>
       </provider>
@@ -542,7 +553,10 @@
           <caret line="45" column="6" lean-forward="true" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#331#846#0" />
+            <element signature="e#1278#1351#0" />
             <element signature="e#2566#3236#0" />
+            <element signature="e#3775#4099#0" />
           </folding>
         </state>
       </provider>
@@ -598,7 +612,10 @@
           <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#331#846#0" />
+            <element signature="e#1278#1351#0" />
             <element signature="e#2566#3236#0" />
+            <element signature="e#3775#4099#0" />
           </folding>
         </state>
       </provider>
@@ -640,7 +657,10 @@
           <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#331#846#0" />
+            <element signature="e#1278#1351#0" />
             <element signature="e#2566#3236#0" />
+            <element signature="e#3775#4099#0" />
           </folding>
         </state>
       </provider>
@@ -779,34 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/util/remote_config.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/scoped_model/product_scoped_model.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="101" column="20" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/products_list_page.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#2566#3236#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/widgets/products_list_item.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
@@ -819,10 +811,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/pages/product_detail_page.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
+        <state relative-caret-position="4455">
           <caret line="283" column="21" selection-start-line="283" selection-start-column="21" selection-end-line="283" selection-end-column="21" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/util/remote_config.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/products_list_page.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="71" column="37" lean-forward="true" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#331#846#0" />
+            <element signature="e#1278#1351#0" />
+            <element signature="e#2566#3236#0" />
+            <element signature="e#3775#4099#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/scoped_model/product_scoped_model.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1336">
+          <caret line="122" column="25" selection-start-line="122" selection-start-column="25" selection-end-line="122" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>

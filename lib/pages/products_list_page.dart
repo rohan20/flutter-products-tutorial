@@ -64,7 +64,7 @@ class ProductsListPageBody extends StatelessWidget {
           : ListView.builder(
               itemCount: model.getProductsCount() + 2,
               itemBuilder: (context, index) {
-                if (index == model.getProductsCount() + 1) {
+                if (index == model.getProductsCount()) {
                   if (model.hasMoreProducts) {
                     pageIndex++;
                     model.parseProductsFromResponse(95, pageIndex);
@@ -72,9 +72,8 @@ class ProductsListPageBody extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 16.0),
                       child: Center(child: CircularProgressIndicator()),
                     );
-                  } else {
-                    return Container();
                   }
+                  return Container();
                 } else if (index == 0) {
                   //0th index would contain filter icons
                   return _buildFilterWidgets(screenSize);
@@ -84,6 +83,11 @@ class ProductsListPageBody extends StatelessWidget {
                   return Container();
                 } else {
                   //1st, 3rd, 5th.. index would contain a row containing 2 products
+
+                  if (index > model.getProductsCount() - 1) {
+                    return Container();
+                  }
+
                   return ProductsListItem(
                     product1: model.productsList[index - 1],
                     product2: model.productsList[index],
