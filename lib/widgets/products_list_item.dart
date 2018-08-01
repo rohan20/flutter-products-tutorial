@@ -20,7 +20,9 @@ class ProductsListItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         _buildProductItemCard(context, product1),
-        _buildProductItemCard(context, product2),
+        product2 == null
+            ? Container()
+            : _buildProductItemCard(context, product2),
       ],
     );
   }
