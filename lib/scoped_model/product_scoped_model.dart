@@ -10,21 +10,14 @@ import 'package:scoped_model/scoped_model.dart';
 
 class ProductScopedModel extends Model {
   List<Product> _productsList = [];
+  bool _isLoading = true;
+
+  List<Product> get productsList => _productsList;
+
+  bool get isLoading => _isLoading;
 
   void addToProductsList(Product product) {
     _productsList.add(product);
-    notifyListeners();
-  }
-
-  void removeFromProductsList(Product product) {
-    if (_productsList.contains(product)) {
-      _productsList.remove(product);
-      notifyListeners();
-    }
-  }
-
-  List<Product> getAllProducts() {
-    return _productsList;
   }
 
   int getProductsCount() {
@@ -49,6 +42,9 @@ class ProductScopedModel extends Model {
   }
 
   Future parseProductsFromResponse(int categoryId) async {
+    _isLoading = true;
+    notifyListeners();
+
     var dataFromResponse = await _getProductsByCategory(categoryId, 1);
 
     dataFromResponse.forEach(
@@ -109,6 +105,7 @@ class ProductScopedModel extends Model {
       },
     );
 
+    _isLoading = false;
     notifyListeners();
   }
 }
