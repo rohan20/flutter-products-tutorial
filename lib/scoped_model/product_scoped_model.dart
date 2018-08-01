@@ -11,10 +11,17 @@ import 'package:scoped_model/scoped_model.dart';
 class ProductScopedModel extends Model {
   List<Product> _productsList = [];
   bool _isLoading = true;
+  bool _isPaginatedLoading = true;
+  bool _hasModeProducts = true;
+  int currentProductCount;
 
   List<Product> get productsList => _productsList;
 
   bool get isLoading => _isLoading;
+
+  bool get isPaginatedLoading => _isPaginatedLoading;
+
+  bool get hasMoreProducts => _hasModeProducts;
 
   void addToProductsList(Product product) {
     _productsList.add(product);
@@ -41,14 +48,22 @@ class ProductScopedModel extends Model {
     return json.decode(response.body);
   }
 
-  Future parseProductsFromResponse(int categoryId) async {
-    _isLoading = true;
+  Future parseProductsFromResponse(int categoryId, int pageIndex) async {
+    if (pageIndex == 1)
+      _isLoading = true;
+    else
+      _isPaginatedLoading = true;
+
     notifyListeners();
 
-    var dataFromResponse = await _getProductsByCategory(categoryId, 1);
+    currentProductCount = 0;
+
+    var dataFromResponse = await _getProductsByCategory(categoryId, pageIndex);
 
     dataFromResponse.forEach(
       (newProduct) {
+        currentProductCount++;
+
         //parse the product's images
         List<AnyImage> imagesOfProductList = [];
 
@@ -105,7 +120,15 @@ class ProductScopedModel extends Model {
       },
     );
 
-    _isLoading = false;
+    if (pageIndex == 1)
+      _isLoading = false;
+    else
+      _isPaginatedLoading = false;
+
+    if (currentProductCount < 6) {
+      _hasModeProducts = false;
+    }
+
     notifyListeners();
   }
 }

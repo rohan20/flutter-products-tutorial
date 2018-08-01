@@ -7,7 +7,7 @@ class ProductsListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ProductScopedModel productModel = ProductScopedModel();
-    productModel.parseProductsFromResponse(95);
+    productModel.parseProductsFromResponse(95, 1);
 
     return new ScopedModel<ProductScopedModel>(
       model: productModel,
@@ -32,6 +32,8 @@ class ProductsListPageBody extends StatelessWidget {
   BuildContext context;
   ProductScopedModel model;
 
+  int pageIndex = 1;
+
   @override
   Widget build(BuildContext context) {
     this.context = context;
@@ -55,35 +57,40 @@ class ProductsListPageBody extends StatelessWidget {
   _buildListView() {
     Size screenSize = MediaQuery.of(context).size;
 
-    debugPrint(model.getProductsCount().toString());
-
-    return ScopedModelDescendant<ProductScopedModel>(
-      builder: (context, child, model) {
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 8.0),
-          child: model.getProductsCount() == 0
-              ? Center(child: Text("No products available."))
-              : ListView.builder(
-                  itemCount: model.getProductsCount(),
-                  itemBuilder: (context, index) {
-                    if (index == 0) {
-                      //0th index would contain filter icons
-                      return _buildFilterWidgets(screenSize);
-                    } else if (index % 2 == 0) {
-                      //2nd, 4th, 6th.. index would contain nothing since this would
-                      //be handled by the odd indexes where the row contains 2 items
-                      return Container();
-                    } else {
-                      //1st, 3rd, 5th.. index would contain a row containing 2 products
-                      return ProductsListItem(
-                        product1: model.productsList[index - 1],
-                        product2: model.productsList[index],
-                      );
-                    }
-                  },
-                ),
-        );
-      },
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: model.getProductsCount() == 0
+          ? Center(child: Text("No products available."))
+          : ListView.builder(
+              itemCount: model.getProductsCount() + 2,
+              itemBuilder: (context, index) {
+                if (index == model.getProductsCount() + 1) {
+                  if (model.hasMoreProducts) {
+                    pageIndex++;
+                    model.parseProductsFromResponse(95, pageIndex);
+                    return Padding(
+                      padding: const EdgeInsets.only(top: 16.0),
+                      child: Center(child: CircularProgressIndicator()),
+                    );
+                  } else {
+                    return Container();
+                  }
+                } else if (index == 0) {
+                  //0th index would contain filter icons
+                  return _buildFilterWidgets(screenSize);
+                } else if (index % 2 == 0) {
+                  //2nd, 4th, 6th.. index would contain nothing since this would
+                  //be handled by the odd indexes where the row contains 2 items
+                  return Container();
+                } else {
+                  //1st, 3rd, 5th.. index would contain a row containing 2 products
+                  return ProductsListItem(
+                    product1: model.productsList[index - 1],
+                    product2: model.productsList[index],
+                  );
+                }
+              },
+            ),
     );
   }
 
