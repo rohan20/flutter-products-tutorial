@@ -11,15 +11,12 @@ import 'package:scoped_model/scoped_model.dart';
 class ProductScopedModel extends Model {
   List<Product> _productsList = [];
   bool _isLoading = true;
-  bool _isPaginatedLoading = true;
   bool _hasModeProducts = true;
   int currentProductCount;
 
   List<Product> get productsList => _productsList;
 
   bool get isLoading => _isLoading;
-
-  bool get isPaginatedLoading => _isPaginatedLoading;
 
   bool get hasMoreProducts => _hasModeProducts;
 
@@ -49,10 +46,9 @@ class ProductScopedModel extends Model {
   }
 
   Future parseProductsFromResponse(int categoryId, int pageIndex) async {
-    if (pageIndex == 1)
+    if (pageIndex == 1) {
       _isLoading = true;
-    else
-      _isPaginatedLoading = true;
+    }
 
     notifyListeners();
 
@@ -120,10 +116,7 @@ class ProductScopedModel extends Model {
       },
     );
 
-    if (pageIndex == 1)
-      _isLoading = false;
-    else
-      _isPaginatedLoading = false;
+    if (pageIndex == 1) _isLoading = false;
 
     if (currentProductCount < 6) {
       _hasModeProducts = false;
