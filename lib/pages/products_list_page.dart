@@ -1,19 +1,11 @@
-import 'dart:async';
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:products_tutorial/model/any_image.dart';
-import 'package:products_tutorial/model/category.dart';
-import 'package:products_tutorial/model/product.dart';
 import 'package:products_tutorial/scoped_model/product_scoped_model.dart';
-import 'package:products_tutorial/util/remote_config.dart';
 import 'package:products_tutorial/widgets/products_list_item.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class ProductsListPage extends StatelessWidget {
   BuildContext context;
-  ProductScopedModel model;
+  ProductScopedModel productModel;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +13,7 @@ class ProductsListPage extends StatelessWidget {
 
     return ScopedModelDescendant<ProductScopedModel>(
         builder: (context, child, model) {
-      this.model = model;
+      this.productModel = model;
       model.parseProductsFromResponse(95);
 
       return Scaffold(
@@ -44,7 +36,7 @@ class ProductsListPage extends StatelessWidget {
     debugPrint("Notify listeners called");
 
     Size screenSize = MediaQuery.of(context).size;
-    return (model.getProductsCount() == 0
+    return (productModel.getProductsCount() == 0
         ? Center(
             child: CircularProgressIndicator(),
           )
@@ -54,7 +46,7 @@ class ProductsListPage extends StatelessWidget {
               if (index == 0) {
                 //0th index would contain filter icons
                 return _buildFilterWidgets(screenSize);
-              } else if (index == model.getProductsCount() + 1) {
+              } else if (index == productModel.getProductsCount() + 1) {
                 return SizedBox(height: 12.0);
               } else if (index % 2 == 0) {
                 //2nd, 4th, 6th.. index would contain nothing since this would
@@ -63,8 +55,8 @@ class ProductsListPage extends StatelessWidget {
               } else {
                 //1st, 3rd, 5th.. index would contain a row containing 2 products
                 return ProductsListItem(
-                  product1: model.getAllProducts()[index - 1],
-                  product2: model.getAllProducts()[index],
+                  product1: productModel.getAllProducts()[index - 1],
+                  product2: productModel.getAllProducts()[index],
                 );
               }
             },
