@@ -1,77 +1,96 @@
-import 'dart:async';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-
 import 'package:flutter/material.dart';
-import 'package:products_tutorial/model/any_image.dart';
-import 'package:products_tutorial/model/category.dart';
-import 'package:products_tutorial/model/product.dart';
-import 'package:products_tutorial/util/remote_config.dart';
+import 'package:products_tutorial/scoped_model/product_scoped_model.dart';
 import 'package:products_tutorial/widgets/products_list_item.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 class ProductsListPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    ProductScopedModel productModel = ProductScopedModel();
+    productModel.parseProductsFromResponse(95, 1);
+
+    return new ScopedModel<ProductScopedModel>(
+      model: productModel,
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          title: Text(
+            "PRODUCT LIST",
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+        ),
+        body: ProductsListPageBody(),
+      ),
+    );
+  }
+}
+
+class ProductsListPageBody extends StatelessWidget {
   BuildContext context;
+  ProductScopedModel model;
+
+  int pageIndex = 1;
 
   @override
   Widget build(BuildContext context) {
     this.context = context;
 
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        title: Text(
-          "PRODUCT LIST",
-          style: TextStyle(
-            color: Colors.black,
-          ),
-        ),
-      ),
-      body: _buildProductsListPage(),
+    return ScopedModelDescendant<ProductScopedModel>(
+      builder: (context, child, model) {
+        this.model = model;
+        return model.isLoading
+            ? _buildCircularProgressIndicator()
+            : _buildListView();
+      },
     );
   }
 
-  _buildProductsListPage() {
+  _buildCircularProgressIndicator() {
+    return Center(
+      child: CircularProgressIndicator(),
+    );
+  }
+
+  _buildListView() {
     Size screenSize = MediaQuery.of(context).size;
-    return Container(
-      color: Colors.grey[100],
-      child: FutureBuilder<List<Product>>(
-        future: _parseProductsFromResponse(95),
-        builder: (context, snapshot) {
-          switch (snapshot.connectionState) {
-            case ConnectionState.active:
 
-            case ConnectionState.waiting:
-              return Center(child: CircularProgressIndicator());
-
-            case ConnectionState.none:
-              return Center(child: Text("Unable to connect right now"));
-
-            case ConnectionState.done:
-              return ListView.builder(
-                itemCount: 8,
-                itemBuilder: (context, index) {
-                  if (index == 0) {
-                    //0th index would contain filter icons
-                    return _buildFilterWidgets(screenSize);
-                  } else if (index == 7) {
-                    return SizedBox(height: 12.0);
-                  } else if (index % 2 == 0) {
-                    //2nd, 4th, 6th.. index would contain nothing since this would
-                    //be handled by the odd indexes where the row contains 2 items
-                    return Container();
-                  } else {
-                    //1st, 3rd, 5th.. index would contain a row containing 2 products
-                    return ProductsListItem(
-                      product1: snapshot.data[index - 1],
-                      product2: snapshot.data[index],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: model.getProductsCount() == 0
+          ? Center(child: Text("No products available."))
+          : ListView.builder(
+              itemCount: model.getProductsCount() + 2,
+              itemBuilder: (context, index) {
+                if (index == model.getProductsCount() + 1) {
+                  if (model.hasMoreProducts) {
+                    pageIndex++;
+                    model.parseProductsFromResponse(95, pageIndex);
+                    return Padding(
+                      padding: const EdgeInsets.only(top: 16.0),
+                      child: Center(child: CircularProgressIndicator()),
                     );
+                  } else {
+                    return Container();
                   }
-                },
-              );
-          }
-        },
-      ),
+                } else if (index == 0) {
+                  //0th index would contain filter icons
+                  return _buildFilterWidgets(screenSize);
+                } else if (index % 2 == 0) {
+                  //2nd, 4th, 6th.. index would contain nothing since this would
+                  //be handled by the odd indexes where the row contains 2 items
+                  return Container();
+                } else {
+                  //1st, 3rd, 5th.. index would contain a row containing 2 products
+                  return ProductsListItem(
+                    product1: model.productsList[index - 1],
+                    product2: model.productsList[index],
+                  );
+                }
+              },
+            ),
     );
   }
 
@@ -119,88 +138,5 @@ class ProductsListPage extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Future<dynamic> _getProductsByCategory(categoryId, pageIndex) async {
-    var response = await http.get(
-      RemoteConfig.config["BASE_URL"] +
-          RemoteConfig.config["BASE_PRODUCTS_URL"] +
-          "&category=$categoryId&per_page=6&page=$pageIndex",
-      headers: {
-        "Authorization": RemoteConfig.config["AuthorizationToken"],
-      },
-    ).catchError(
-      (error) {
-        return false;
-      },
-    );
-
-    return json.decode(response.body);
-  }
-
-  Future<List<Product>> _parseProductsFromResponse(int categoryId) async {
-    List<Product> productsList = <Product>[];
-
-    var dataFromResponse = await _getProductsByCategory(categoryId, 1);
-
-    dataFromResponse.forEach(
-      (newProduct) {
-        //parse the product's images
-        List<AnyImage> imagesOfProductList = [];
-
-        newProduct["images"].forEach(
-          (newImage) {
-            imagesOfProductList.add(
-              new AnyImage(
-                imageURL: newImage["src"],
-                id: newImage["id"],
-                title: newImage["name"],
-                alt: newImage["alt"],
-              ),
-            );
-          },
-        );
-
-        //parse the product's categories
-        List<Category> categoriesOfProductList = [];
-
-        newProduct["categories"].forEach(
-          (newCategory) {
-            categoriesOfProductList.add(
-              new Category(
-                id: newCategory["id"],
-                name: newCategory["name"],
-              ),
-            );
-          },
-        );
-
-        //parse new product's details
-        Product product = new Product(
-          productId: newProduct["id"],
-          productName: newProduct["name"],
-          description: newProduct["description"],
-          regularPrice: newProduct["regular_price"],
-          salePrice: newProduct["sale_price"],
-          stockQuantity: newProduct["stock_quantity"] != null
-              ? newProduct["stock_quantity"]
-              : 0,
-          ifItemAvailable: newProduct["on_sale"] &&
-              newProduct["purchasable"] &&
-              newProduct["in_stock"],
-          discount: ((((int.parse(newProduct["regular_price"]) -
-                          int.parse(newProduct["sale_price"])) /
-                      (int.parse(newProduct["regular_price"]))) *
-                  100))
-              .round(),
-          images: imagesOfProductList,
-          categories: categoriesOfProductList,
-        );
-
-        productsList.add(product);
-      },
-    );
-
-    return productsList;
   }
 }
