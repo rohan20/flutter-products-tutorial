@@ -2,9 +2,11 @@
 
 A Flutter e-commerce starter kit built using [ScopedModel](https://pub.dartlang.org/packages/scoped_model) for state management that allows you to view a list of paginated products and its details. Originally built by the Flutter team at [GeekyAnts](www.geekyants.com).
 
-You can checkout the complete starter kit on Flutter Market: [Link](http://docs.fluttermarket.com/flutter-ecommerce-backend/woo-commerce.html)
+You can checkout the complete starter kit on Flutter Market: [Link](https://fluttermarket.com/view/flutter-e-commerce-backend)
 
 Medium tutorial: [Link](www.medium.com)
+
+Docs for Admin dashboard: [Link](http://docs.fluttermarket.com/flutter-ecommerce-backend/)
 
 ## Setup
 
