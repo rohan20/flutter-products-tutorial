@@ -4,7 +4,7 @@ A Flutter e-commerce starter kit built using [ScopedModel](https://pub.dartlang.
 
 You can checkout the complete starter kit on Flutter Market: [Link](https://fluttermarket.com/view/flutter-e-commerce-backend)
 
-Medium tutorial: [Link](www.medium.com)
+Medium tutorial: [Link](https://blog.geekyants.com/flutter-e-commerce-backend-app-2d23121fd0c8-2d23121fd0c8)
 
 Docs for Admin dashboard: [Link](http://docs.fluttermarket.com/flutter-ecommerce-backend/)
 
